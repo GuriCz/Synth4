@@ -7,9 +7,24 @@ const Admin = require('../models/Admin.model');
 
 const gKey= process.env.MAP_API;
 
+const { isLoggedIn, isLoggedOut, isUser } = require("../middleware/route-guard.js");
+
+
 //CREATE A REQUEST
 router.get('/contact', (req, res) => {
-  res.render('contact', {gKey});
+ 
+  
+    if (req.session.currentUser) {
+      const { username, password } = req.session.currentUser;
+      User.findOne({ username }).then((user) => {
+        if (password===user.password) {
+         
+            res.render("contact", {gKey,  user  ,userInSession: req.session.currentUser});
+        } 
+      });
+    }else{
+      res.render('contact', {gKey});
+    }
 });
 
 let isRouteRunning = false;

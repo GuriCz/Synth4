@@ -31,7 +31,21 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/services", (req, res, next) => {
-  res.render("services", {gKey});
+
+  if (req.session.currentUser) {
+    const { username, password } = req.session.currentUser;
+    User.findOne({ username }).then((user) => {
+      if (password===user.password) {
+       
+          res.render("services", {gKey,  user  ,userInSession: req.session.currentUser});
+      } 
+    });
+  }else{
+
+    res.render("services", {gKey});
+  }
+  
+ 
 });
 
 router.get("/services-details", (req, res, next) => {
@@ -39,7 +53,20 @@ router.get("/services-details", (req, res, next) => {
 })
 
 router.get("/about", (req, res, next) => {
-  res.render("about", {gKey});
+
+  if (req.session.currentUser) {
+    const { username, password } = req.session.currentUser;
+    User.findOne({ username }).then((user) => {
+      if (password===user.password) {
+       
+          res.render("about", {gKey,  user  ,userInSession: req.session.currentUser});
+      } 
+    });
+  }
+  else{
+    res.render("about", {gKey});
+  }
+  
 });
 
 router.post("/componentsearch", async (req, res) => {

@@ -8,7 +8,7 @@ const mongoose = require("mongoose");
 
 const Repair = require("../models/Repair.model");
 
-const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
+const { isLoggedIn, isLoggedOut, isUser } = require("../middleware/route-guard.js");
 
 const gKey = process.env.MAP_API;
 
@@ -19,6 +19,7 @@ let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{7,}$/;
 
 router.get("/create", isLoggedOut, (req, res, next) => {
+  
   res.render("account-create", { gKey });
 });
 
@@ -64,6 +65,7 @@ router.post("/create", async (req, res, next) => {
       username: newUser.username,
       email: newUser.email,
       password: newUser.password,
+      //admin:true
     });
     // req.session.userId = newUser._id;
     res.render("login", { gKey });
@@ -133,7 +135,7 @@ router.post("/login", (req, res, next) => {
     .catch((error) => next(error));
 });
 
-router.get("/user-profile", async (req, res, next) => {
+router.get("/user-profile", isUser, async (req, res, next) => {
   try {
     const userId = req.session.currentUser._id;
     const repairs = await Repair.find({ user: userId });

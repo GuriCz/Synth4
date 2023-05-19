@@ -16,9 +16,25 @@ const isLoggedIn = (req, res, next) => {
     }
     next();
   };
+
+  const isAdmin = (req, res, next) => {
+    if (req.session.currentUser.admin!=true) {
+      return res.redirect('/');
+    }
+    next();
+  };
+
+  const isUser = (req, res, next) => {
+    if (req.session.currentUser.admin) {
+      return res.redirect('/');
+    }
+    next();
+  };
   
   module.exports = {
     isLoggedIn,
-    isLoggedOut
+    isLoggedOut,
+    isAdmin,
+    isUser
   };
   

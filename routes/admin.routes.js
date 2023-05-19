@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 
 const Repair = require("../models/Repair.model");
 
+const { isLoggedIn, isLoggedOut,isAdmin } = require("../middleware/route-guard.js");
+
 function calculateHoursAndMinutes(totalSeconds) {
   const hours = Math.floor(totalSeconds / 3600);
   const minutes = Math.floor((totalSeconds % 3600) / 60);
@@ -11,11 +13,11 @@ function calculateHoursAndMinutes(totalSeconds) {
 }
 
 /* GET home page */
-router.get("/", (req, res, next) => {
+router.get("/", isAdmin,  (req, res, next) => {
   res.render("admin");
 });
 
-router.get("/projects", (req, res, next) => {
+router.get("/projects",  isAdmin, (req, res, next) => {
   const pending = [];
   const active = [];
   const closed = [];
@@ -58,7 +60,7 @@ router.post("/projects", (req, res, next) => {
   });
 });
 
-router.get("/projects/workingOn", (req, res, next) => {
+router.get("/projects/workingOn",  isAdmin, (req, res, next) => {
   res.render("admin-workingON");
 });
 
