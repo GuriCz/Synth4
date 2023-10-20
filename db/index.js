@@ -1,18 +1,37 @@
-// ℹ️ package responsible to make the connection with mongodb
-// https://www.npmjs.com/package/mongoose
 const mongoose = require("mongoose");
-
-// ℹ️ Sets the MongoDB URI for our app to have access to it.
-// If no env has been set, we dynamically set it to whatever the folder name was upon the creation of the app
-
-const MONGO_URI = "mongodb+srv://thesynthdoctor:sjJGXqtRpPmTtPF6@thesynthdoctor.qbqgpox.mongodb.net/test";
+const MONGO_URI = "mongodb://127.0.0.1:27017/theSynthLocal";
 
 mongoose
-  .connect(MONGO_URI)
-  .then((x) => {
-    const databaseName = x.connections[0].name;
-    console.log(`Connected to Mongo! Database name: "${databaseName}"`);
+  .connect(MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
   })
-  .catch((err) => {
-    console.error("Error connecting to mongo: ", err);
+  .then(() => {
+    console.log("Connected to MongoDB!");
+  })
+  .catch((error) => {
+    if (error instanceof mongoose.Error) {
+      // Handle Mongoose-specific errors
+      if (error.name === "MongoTimeoutError") {
+        console.error("MongoDB connection timed out.");
+      } else {
+        console.error("Mongoose error:", error.message);
+      }
+    } else {
+      // Handle generic errors
+      console.error("Error connecting to MongoDB:", error.message);
+    }
   });
+
+// You can optionally listen for disconnect events
+mongoose.connection.on("disconnected", () => {
+  console.log("MongoDB disconnected!");
+});
+
+// Handle SIGINT (Ctrl-C) to close the MongoDB connection when the app is terminated
+process.on("SIGINT", () => {
+  mongoose.connection.close(() => {
+    console.log("MongoDB connection closed due to app termination");
+    process.exit(0);
+  });
+});

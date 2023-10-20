@@ -3,6 +3,8 @@ const router = express.Router();
 const db = require("../db/index.js");
 
 const User = require("../models/User.model");
+const Admin = require("../models/Admin.model");
+
 const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 
@@ -26,10 +28,10 @@ router.get("/create", isLoggedOut, (req, res, next) => {
 router.post("/create", async (req, res, next) => {
   const newUser = req.body;
   console.log(newUser);
-  if (!newUser.username || !newUser.password || !newUser.name) {
+  if (!newUser.email || !newUser.password || !newUser.name) {
     res.render("account-create", {gKey,
       errorMessage:
-        "All fields are mandatory. Please provide your username, email and password.",
+        "All fields are mandatory. Please provide your name, email and password.",
     });
     return;
   } else if (newUser.email != newUser.email2) {
@@ -65,7 +67,7 @@ router.post("/create", async (req, res, next) => {
       username: newUser.username,
       email: newUser.email,
       password: newUser.password,
-      //admin:true
+      admin:true
     });
     // req.session.userId = newUser._id;
     res.render("login", { gKey });

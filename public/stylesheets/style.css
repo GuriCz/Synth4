@@ -170,3 +170,6 @@ body {
   width: 14.28%; /* Divide 100% by the number of columns (7 columns in this case) */
 }
 
+.max-ph{
+  max-height: 600px;
+}

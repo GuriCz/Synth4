@@ -30,27 +30,32 @@ router.get("/", (req, res, next) => {
   res.render("index",{gKey} );}
 });
 
-router.get("/services", (req, res, next) => {
+router.get("/prices", (req, res, next) => {
 
   if (req.session.currentUser) {
     const { username, password } = req.session.currentUser;
     User.findOne({ username }).then((user) => {
       if (password===user.password) {
        
-          res.render("services", {gKey,  user  ,userInSession: req.session.currentUser});
+          res.render("prices", {gKey,  user  ,userInSession: req.session.currentUser});
       } 
     });
   }else{
 
-    res.render("services", {gKey});
+    res.render("prices", {gKey});
   }
   
  
 });
 
-router.get("/services-details", (req, res, next) => {
-  res.render("services-details");
+router.get("/projects", (req, res, next) => {
+  res.render("projects");
 })
+
+router.get("/about", (req, res, next) => {
+  res.render("about");
+})
+
 
 router.get("/about", (req, res, next) => {
 

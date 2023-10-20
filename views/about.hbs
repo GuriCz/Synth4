@@ -1,219 +1,77 @@
+<!-- Header-->
+
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col">
+            <h1>ABOUT ME</h1>
+            <br>
+            <br>
+        </div>
+    </div>
+</div>
+
+<!-- Paragraph 1-->
+
 <div class="container">
-    <h1>About Our Services</h1>
-    <p>Here is a list with what we offer and what it costs. If you hover the name of a service, you will see a more
-        detailed description of it. Below the table are also a few examples so you can pick what fits your case best.
-    </p>
-    <script>
-        function addToTotal(button) {
-            const price = parseFloat(button.getAttribute('data-price'));
-            const totalElement = document.getElementById('total');
-            let currentTotal = parseFloat(totalElement.innerText);
-            currentTotal = isNaN(currentTotal) ? 0 : currentTotal;
-            const newTotal = currentTotal + price;
-            totalElement.innerText = newTotal.toFixed();
-        }
-        function resetTotal() {
-            const totalElement = document.getElementById('total');
-            totalElement.innerText = '0';
-        }
-    </script>
-    <!-- Accordion Start -->
-    <div id="accordion" class="accordion accordion--full-width">
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse1" aria-expanded="false" aria-controls="collapse1">
-                    <b>Handling case</b>
-                </button>
-            </h2>
-            <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>Fixed fee for accepting a case. Included in this fee is a general cleaning of the unit (outside
-                        and inside), the disassembly and assembly of the device, and the first inspection and step of
-                        troubleshooting: understanding what's actually going on inside the device (what's the problem,
-                        not the solution).</p>
-                    <span class="price">Price: €30</span>  <span> Always included</span>
-                  {{!--   <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="30">Add</button> --}}
-                </div>
-            </div>
+    <div class="row m-4">
+        <div class="col-md-6">
+            <img src="/images/about1.jpg" alt="pic1" class="img-fluid mx-auto d-block max-ph">
         </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                    <b>Easy Fix</b>
-                </button>
-            </h2>
-            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>All repairs where the problem is known and doesn't require troubleshooting. Examples: broken or
-                        noisy potentiometers, jacks, broken or loose connectors, dead LED, and very light water damages.
-                        This is the category where most repairs will end up, I guess.</p>
-                    <span class="price">Price: €20</span>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="20">Add</button>
-                </div>
-            </div>
+        <div class="col-md-6">
+            <h2>Small introduction</h2><br>
+            <p>After thoughtful planning, I'm excited to introduce you to my website, which I manage with the same friendly and welcoming tone you see here. It's essentially a blog where I share intriguing cases and my latest projects, all approached with a genuine blend of professionalism and warmth.</p>
+            <p>This venture is all about pursuing my ultimate dream and passion: Music.</p>
+        <p>Music has been the driving force behind my journey, inspiring me to expand my knowledge and skills. Starting as a music enthusiast exploring European clubs, I gradually transitioned into DJing and music production. I'm eager to share this musical adventure with you as we explore the world of music, technology, and creativity together.</p>
+<p> Your trust in my skills as the sole repair technician behind this operation is truly appreciated. Please don't hesitate to reach out if you have any questions or if there's anything I can assist you with.</p>
+              
+                <img src="/images/sine.png" alt="pic2" class="img-fluid mx-auto d-block">
         </div>
+    </div>
+</div>
+<br><br>
+<!-- Paragraph 2-->
 
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                    <b>Price per hour</b>
-                </button>
-            </h2>
-            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>In case of more complex problems which require longer troubleshooting, an hourly fee would be
-                        applied. This is calculated only in active repair time, while measurements and trials are
-                        required and will be calculated per minute (you aren't charged the full hour if the repair was
-                        done in 50 minutes).</p>
-                    <span class="price">Price: €50</span>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="50">Add</button>
-                </div>
-            </div>
+<div class="container">
+    <div class="row m-4">
+        <div class="col-md-6">
+            <h2>School and apprenticeship</h2><br>
+            <p>Understanding the profound connection between electronics and electronic music, I found myself craving more. Enrolling in an electronics technical institute in Italy, I was fortunate to have an instructor with experience in designing music-related products who supported and guided my projects.
+
+</p>
+            <p>After successful studies, I relocated to Berlin to pursue a career in the music industry. A pivotal moment came when I joined the renowned SoundDevices repair center. Starting as an intern, I soon earned a position as a junior repair technician. Under the mentorship of seasoned professionals, I honed my troubleshooting skills and developed a unique methodology.
+
+</p>
+            <p>This journey was made possible through the company's trust, which eventually led to my employment, and my mentors' invaluable guidance, for which I'm deeply grateful.
+
+
+
+
+</p>
+
+            <img src="/images/square.png" alt="pic2" class="img-fluid mx-auto d-block">
         </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                    <b>Deep cleaning</b>
-                </button>
-            </h2>
-            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>Every knob, button and keypad will be removed and cleaned in a ultrasonic maschine for ultimate
-                        fat removal. Every potentiomer and button will be cleaned and in case of necessity gently
-                        lubrificated. All jacks, connectors and contacts will be cleaned one by one, bended connectors
-                        will be fixed up. PCB will be inspected and cleaned from corrosion. Everything your synth needs
-                        to shine again! No handling fee for products that requires only the cleaning.</p>
-                    <span class="price">Price: €40</span>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="40">Add</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
-                    <b>Studio mixer service (aka the Mixer Fixer)</b>
-                </button>
-            </h2>
-            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>In desperate need of someone that fix your mixer? call the mixer fixer! As all works will require
-                        different time and skills, I advise you to send a request describing me your problem and let's
-                        see what we can do.</p>
-                    <span class="price">Price: €150</span>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="150">Add</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
-                    <b>PCB design service (schematic provided)</b>
-                </button>
-            </h2>
-            <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>Saw a design online from a old module that you would like to add to your collection but can't
-                        find any board for it? I got you bro! Time calculated depending on complexity and time required.
-                    </p>
-                    <span class="price">Price: €40</span>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="40">Add</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
-                    <b>PCB creation service (schematic and design)</b>
-                </button>
-            </h2>
-            <div id="collapse7" class="accordion-collapse collapse" aria-labelledby="heading7"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>Have an idea for a simple module that you would like in your case? need to save some space or
-                        would like to have specific controls all together? Drop me a mail and lets see what we can do :)
-                    </p>
-                    <span class="price">Price: €80</span>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="80">Add</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
-                    <b>Personalized MIDI controller (usb, midi or both possible)</b>
-                </button>
-            </h2>
-            <div id="collapse8" class="accordion-collapse collapse" aria-labelledby="heading8"
-                data-bs-parent="#accordion">
-                <div class="accordion-body">
-                    <p>In case you always dreamed of a midi controller tailored for your style.... here is the solution!
-                        Some exemples can be found on the project session.</p>
-                    <span class="price">Price: €100</span>
-                    <button type="button" class="btn btn-primary btn-sm" onclick="addToTotal(this)"
-                        data-price="100">Add</button>
-                </div>
-            </div>
+        <div class="col-md-6">
+            <img src="/images/about3.jpg" alt="pic2" class="img-fluid mx-auto d-block" style="max-width: 80%; max-height: 80%;">
         </div>
 
     </div>
-    <br>
-    <div class="d-flex align-items-center">
-        <h5 class="me-3">Current Total:</h5>
-        <h5><span id="total">30</span>€</h5>
-        <button type="button" class="btn btn-danger ms-3" onclick="resetTotal()">Reset</button>
+</div>
+
+<!-- Paragraph 3-->
+<div class="container">
+    <div class="row m-4">
+        <div class="col-md-6">
+            <img src="/images/about4.jpg" alt="pic1" class="img-fluid mx-auto d-block" style="max-width: 80%; max-height: 80%;">
+        </div>
+        <div class="col-md-6">
+            <h2>Evolution of things</h2><br>
+            <p> Unfortunately, the company decided to move its European division to another country. But this marked the start of my personal journey.</p>
+            <p>For over a year, friends tagged me as "the go-to guy for fixing neglected studio equipment." The word spread, and people started reaching out for help with all sorts of gear – synthesizers, DJ equipment, pedals, and studio mixers.</p>
+        <p>As each successful repair led to conversations and shared excitement, it became clear that I could put my skills to broader use. That's how this page came to be. Considering my occasional procrastination, where projects often don't get fully completed, I decided to keep this website informal, more like a blog than a formal professional platform.</p>
+        <p>Thank you for taking the time to explore my journey and passion here. I'm excited to share this adventure with you as we explore the world of music, technology, and creativity. Your trust in my skills as the sole repair technician is invaluable, and I'm always here to assist with any questions or projects you may have in mind.</p>
+        <p>Stay tuned for more intriguing cases, projects, and music-related stories. Together, we'll continue this exciting journey.</p>
+
+                <img src="/images/triangle.png" alt="pic2" class="img-fluid mx-auto d-block">
+        </div>
     </div>
-    <br><br>
-    <h3>Case 1</h3>
-    <p>
-        You have a synthesizer with a potentiometer not working. You need to pay the handling fee as soon as you
-        drop the unit off. This will cover the cost of opening the device, general cleaning, and assembly.
-        Once I can confirm that the machine doesn't have any other problems, I will start calculating the time. If
-        the repair can be done in under one hour, you will pay the Easy Fix tariff, and your total will be €50.
-    </p>
-    <br>
-    <h3>Case 2</h3>
-    <p>
-        Your synth is not switching on anymore, and a faulty connector is suspected of the problem. After paying the
-        handling fee, the troubleshooting is started and... Actually, your connector isn't the cause of the problem,
-        as voltage is present but the device is dropping it somewhere.
-        In case the problem will not be found in the first hour, you will be informed that longer troubleshooting is
-        required, and it will be calculated from the time I actively work on the troubleshooting and fix (the
-        assembly of the device is included in the handling costs).
-        Generally speaking, as synthesizers are usually much easier than what I was used to repair in my previous
-        company, the troubleshooting time should be fairly low.
-        Let's say I will take 90 minutes to identify the problem, confirm I am right, solder the new parts, and test
-        that the issue is fixed.
-        You will be charged for the 90 minutes of troubleshooting time (€90) plus the €30 of handling costs for a
-        total of €120.
-        To be really honest, I guess most of the problems will be handled under the Easy Fix rule... very rarely are
-        there complex cases that require much more effort for a solution.
-    </p>
 </div>
